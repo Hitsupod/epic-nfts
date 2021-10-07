@@ -27,6 +27,7 @@ contract MyEpicNFT is ERC721URIStorage {
   string[] secondWords = ["Goat ", "Best ", "Amazing ", "Favorite ", "Dope ", "Great "];
   string[] thirdWords = ["Anime", "Anime", "Anime", "Anime", "Anime", "Anime"];
   
+  // Magical Events
   event NewEpicNFTMinted(address sender, uint256 tokenId);
   // We need to pass the name of our NFTs token and it's symbol.
   constructor() ERC721 ("HexagonNFT", "HEXAGON") {
@@ -104,6 +105,8 @@ contract MyEpicNFT is ERC721URIStorage {
   
     _tokenIds.increment();
     console.log("An NFT w/ ID %s has been minted to %s", newItemId, msg.sender);
+
+    // EMIT Magical Event
     emit NewEpicNFTMinted(msg.sender, newItemId);
   }
 }
